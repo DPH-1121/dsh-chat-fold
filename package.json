@@ -1,6 +1,6 @@
 {
   "name": "dsh-chat-fold",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DeepSeek Harness 对话折叠：让思考行与工具行可以单独收起，并在回合结束后自动折叠中间过程。官方 Chat 的紧凑折叠在「回合未结束」或「历史未全部加载」时完全不生效，长回合于是铺满几十条过程行；本插件补上这层，不改写任何官方节点。",
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "url": "https://github.com/HaydenSmith1121/dsh-chat-fold/issues"
   },
   "engines": {
-    "node": "^22.19.0 || >=24.0.0"
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.1.6-alpha.1 <0.1.7-0 || >=0.1.7-alpha.0 <0.2.0-0 || >=0.2.0-rc.1 <0.2.1-0 || >=0.2.1-rc.2 <0.3.0-0"
   },
   "main": "./lib/index.js",
   "exports": {
@@ -45,7 +46,7 @@
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "4.0.2"
+    "@deepseek-ai/cordis": ">=4.0.2 <5.0.0"
   },
   "keywords": [
     "dsh",

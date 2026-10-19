@@ -3,7 +3,7 @@
 > 让 DeepSeek Harness 的对话正文能真正收起来：**每条思考行与工具行都可以单独点开/收起**，已结束的回合自动折叠中间过程，只留最终答复。
 
 <p align="center">
-  <img src="https://img.shields.io/badge/DeepSeek_Harness-0.1.6--alpha.1-4D6BFE?style=flat-square" alt="dsh 基线">
+  <img src="https://img.shields.io/badge/DeepSeek_Harness-0.2.1--rc.2-4D6BFE?style=flat-square" alt="dsh 基线">
   <img src="https://img.shields.io/badge/License-MIT-2EA44F?style=flat-square" alt="MIT">
   <img src="https://img.shields.io/badge/纯客户端-无宿主依赖-8B5CF6?style=flat-square" alt="纯客户端">
 </p>
@@ -78,7 +78,7 @@ Harness 的 `Normal / Compact` 只切换那条 React 投影的开关，**不解�
 
 ## 兼容性
 
-- 基线：`@deepseek-ai/dsh` **0.1.6-alpha.1**
+- 基线：`@deepseek-ai/dsh` **0.2.1-rc.2**
 - 纯客户端插件：宿主半不发布服务、不改写官方行，只作为启动图的一行存在（客户端 bundle 靠它被加载）。
 - 不注册任何 Slot 占用，因此**不会**与替换官方渲染器的插件抢位。
 - 依赖的官方 DOC 契约：`.EvIC1a_flowItem[data-chat-flow-kind][data-chat-turn]`、`[data-chat-anchor-key]`。这些是正文行的稳定标记；若上游改名，插件会自动不生效（而不是误伤正文）。
@@ -86,7 +86,7 @@ Harness 的 `Normal / Compact` 只切换那条 React 投影的开关，**不解�
 ## 开发
 
 ```bash
-npm pack --pack-destination 0.1.6-alpha.1     # 打 tarball
+npm pack --pack-destination 0.2.1-rc.2     # 打 tarball
 ```
 
 源码只有一个客户端 bundle（`lib/client.js`），是 **classic script**，不是 ES module —— 它通过 `window.__ModuleLoader__.load({ id: 'dsh-chat-fold', factory })` 注册。改完直接重打包、重装、刷新页面即可。
